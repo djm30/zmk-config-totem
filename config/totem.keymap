@@ -33,40 +33,43 @@
 
 / {
        combos {
-              compatible = "zmk,combos";
-              combo_adj_1 {
-                  timeout-ms = <50>;
-                  key-positions = <0 1>;
-                  bindings = <&to ADJ>;
-              };
-              combo_adj_2 {
-                  timeout-ms = <50>;
-                  key-positions = <8 9>;
-                  bindings = <&to ADJ>;
-              };
-            };
+          compatible = "zmk,combos";
+          combo_adj_1 {
+              timeout-ms = <50>;
+              key-positions = <0 1>;
+              bindings = <&to ADJ>;
+          };
+
+          combo_adj_2 {
+              timeout-ms = <50>;
+              key-positions = <8 9>;
+              bindings = <&to ADJ>;
+          };
+        };
 
        behaviors {
-              mo_sl: behavior_mo_sl {
-                  compatible = "zmk,behavior-hold-tap";
-                  #binding-cells = <2>;
-                  flavor = "hold-preferred";
-                  tapping-term-ms = <170>;
-                  bindings = <&mo>, <&sl>;
-              };
-        td_num: num_layer_dance {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <170>;
-                bindings = <&mo_sl NUM NUM>, <&to NUM>;
-            };
-        td_sym: sym_layer_dance {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <170>;
-                bindings = <&mo_sl SYM SYM>, <&to SYM>;
-            };
+         mo_sl: behavior_mo_sl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+            bindings = <&mo>, <&sl>;
+           };
+
+         td_num: num_layer_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <170>;
+            bindings = <&mo_sl NUM NUM>, <&to NUM>;
           };
+
+         td_sym: sym_layer_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <170>;
+            bindings = <&mo_sl SYM SYM>, <&to SYM>;
+          };
+        };
           
 
 
@@ -115,7 +118,6 @@ label= "NAVI"                              ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
                 &trans      &kp F7      &kp F8      &kp F9      &kp F12         &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP   &kp C_PP    &kp LS(LG(NUMBER_4))
                 &trans      &kp F4      &kp F5      &kp F6      &kp F11         &kp LEFT    &kp DOWN       &kp UP         &kp RIGHT   &trans
     &kp ESC     &trans      &kp F1      &kp F2      &kp F3      &kp F10         &kp HOME    &kp PG_DN      &kp PG_UP      &kp END     &trans    &kp TAB
@@ -141,7 +143,6 @@ label= "SYM"                               ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
                 &kp AT      &kp LT      &kp GT      &kp DQT     &kp GRAVE       &kp UNDER        &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
                 &kp COLON   &kp MINUS   &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL         &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
     &kp ESC     &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp LA(NUMBER_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK  &kp TAB          
