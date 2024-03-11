@@ -32,21 +32,6 @@
 };
 
 / {
-       combos {
-          compatible = "zmk,combos";
-          combo_adj_1 {
-              timeout-ms = <50>;
-              key-positions = <0 1>;
-              bindings = <&to ADJ>;
-          };
-
-          combo_adj_2 {
-              timeout-ms = <50>;
-              key-positions = <8 9>;
-              bindings = <&to ADJ>;
-          };
-        };
-
        behaviors {
          mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
@@ -93,7 +78,7 @@ label= "BASE"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J       &kp L       &kp U       &kp Y       &kp SEMI
+                &lt ADJ q       &kp W       &kp F       &kp P       &kp B           &kp J       &kp L       &kp U       &kp Y       &lt ADJ SEMI
                 &mt LALT A  &mt LGUI R  &mt LSHFT S &mt LCTRL T &kp G           &kp M       &mt RCTRL N &mt RSHFT E &mt RGUI I  &mt RALT O
     &kp ESC     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K       &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp TAB
                                         &td_sym     &lt NAV SPACE   &kp RET     &kp LSHFT   &kp BSPC    &td_num
@@ -118,6 +103,7 @@ label= "NAVI"                              ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
                 &trans      &kp F7      &kp F8      &kp F9      &kp F12         &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP   &kp C_PP    &kp LS(LG(NUMBER_4))
                 &trans      &kp F4      &kp F5      &kp F6      &kp F11         &kp LEFT    &kp DOWN       &kp UP         &kp RIGHT   &trans
     &kp ESC     &trans      &kp F1      &kp F2      &kp F3      &kp F10         &kp HOME    &kp PG_DN      &kp PG_UP      &kp END     &trans    &kp TAB
@@ -185,20 +171,20 @@ label= "NUM"                               ;
 label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃   RESET   ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+//             ┃   RESET   ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃   RESET   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃ BOOTLOAD  ┃ BT NEXT   ┃           ┃           ┃           ┃   ┃    BT 1   ┃    BT 2   ┃   BT 3    ┃    BT 4   ┃   BT 5    ┃
+//             ┃           ┃ BT NEXT   ┃  OUT BLE  ┃           ┃           ┃   ┃    BT 1   ┃    BT 2   ┃   BT 3    ┃    BT 4   ┃   BT 5    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃ BT PREV   ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┃           ┃           ┃ BT PREV   ┃           ┃  BOOTLOAD ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &sys_reset  &bt BT_CLR &out OUT_TOG &trans      &trans          &trans          &trans         &trans          &trans          &trans
-                &bootloader &bt BT_NXT  &trans      &trans      &trans          &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 5 
-                &trans      &trans      &bt BT_PRV  &trans      &trans          &trans          &trans         &trans          &trans          &trans         &trans              
+                &sys_reset  &bt BT_CLR  &out OUT_TOG    &trans      &trans          &trans          &trans         &trans          &trans          &sys_reset
+                &trans      &bt BT_NXT  &out OUT_BLE    &trans      &trans          &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 5 
+    &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans         &trans          &trans          &trans         &trans              
                                         &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
                         >;
                 };
