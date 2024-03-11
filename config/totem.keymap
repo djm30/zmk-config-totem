@@ -142,9 +142,9 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp AT      &kp LT      &kp GT      &kp DQT     &kp GRAVE       &kp UNDER   &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
-                &kp COLON   &kp MINUS   &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL    &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
-    &kp ESC     &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp RA(N_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK  &kp TAB          
+                &kp AT      &kp LT      &kp GT      &kp DQT     &kp GRAVE       &kp UNDER        &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
+                &kp COLON   &kp MINUS   &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL         &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
+    &kp ESC     &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp LA(NUMBER_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK  &kp TAB          
                                         &to BASE    &lt NAV SPACE   &kp RET     &to BASE   &kp BSPC    &td_num
                         >;
                 };
