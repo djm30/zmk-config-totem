@@ -168,7 +168,7 @@ label= "NUM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &trans      &kp LS(NUMBER_3) &kp DLLR       &kp PRCNT          &trans               &trans      &kp KP_N7   &kp KP_N8   &kp KP_N9   &KP_PLUS      
+                &trans      &kp LS(NUMBER_3) &kp DLLR       &kp PRCNT       &tran  s             &trans      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS      
                 &trans      &kp DOT       &kp COMMA      &kp KP_MULTIPLY    &kp KP_DIVIDE        &kb KP_N0   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MINUS
     &kc ESC     &trans      &trans        &kp LT         &kp GT             &trans               &trans      &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_EQUAL        &kp TAB        
                                         &td_sym     &lt NAV SPACE   &kp RET     &to BASE  &kp BSPC    &to BASE
