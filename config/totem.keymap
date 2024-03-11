@@ -78,7 +78,7 @@ label= "BASE"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &lt ADJ q       &kp W       &kp F       &kp P       &kp B           &kp J       &kp L       &kp U       &kp Y       &lt ADJ SEMI
+                &lt ADJ Q   &kp W       &kp F       &kp P       &kp B       &kp J       &kp L       &kp U       &kp Y       &lt ADJ SEMI
                 &mt LALT A  &mt LGUI R  &mt LSHFT S &mt LCTRL T &kp G           &kp M       &mt RCTRL N &mt RSHFT E &mt RGUI I  &mt RALT O
     &kp ESC     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K       &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp TAB
                                         &td_sym     &lt NAV SPACE   &kp RET     &kp LSHFT   &kp BSPC    &td_num
