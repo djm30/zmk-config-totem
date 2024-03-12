@@ -36,8 +36,8 @@
          mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <170>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&sl>;
            };
 
@@ -183,7 +183,7 @@ label= "ADJ"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &sys_reset  &bt BT_CLR  &out OUT_TOG    &trans      &trans          &trans          &trans         &trans          &trans          &sys_reset
-                &trans      &bt BT_NXT  &out OUT_BLE    &trans      &trans          &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 5 
+                &trans      &bt BT_NXT  &out OUT_BLE    &trans      &trans          &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
     &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans         &trans          &trans          &trans         &trans              
                                         &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
                         >;
