@@ -218,9 +218,9 @@ label= "NUM"                               ;
 label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃   RESET   ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃   RESET   ┃
+//             ┃   RESET   ┃ BT CLEAR  ┃  OUT BLE  ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃   RESET   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃           ┃ BT NEXT   ┃  OUT BLE  ┃           ┃           ┃   ┃    BT 1   ┃    BT 2   ┃   BT 3    ┃    BT 4   ┃   BT 5    ┃
+//             ┃           ┃ BT NEXT   ┃  OUT TOG  ┃           ┃           ┃   ┃    BT 1   ┃    BT 2   ┃   BT 3    ┃    BT 4   ┃   BT 5    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃ BT PREV   ┃           ┃  BOOTLOAD ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -229,8 +229,8 @@ label= "ADJ"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &sys_reset  &bt BT_CLR  &out OUT_TOG    &trans      &trans          &trans          &trans          &trans          &trans          &sys_reset
-                &trans      &bt BT_NXT  &out OUT_BLE    &trans      &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
+                &sys_reset  &bt BT_CLR  &out OUT_BLE    &trans      &trans          &trans          &trans          &trans          &trans          &sys_reset
+                &trans      &bt BT_NXT  &out OUT_TOG    &trans      &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
     &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans          &trans          &trans          &trans          &trans              
                                         &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
                         >;
