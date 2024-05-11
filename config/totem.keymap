@@ -21,6 +21,7 @@
 #define SYM  2
 #define NUM  3
 #define ADJ  4
+#define FUN  5
 
 #define MO_SL(layer) &mo_sl layer layer
 #define HYPR(kc) &mt LC(LG(LS(LALT))) kc
@@ -92,7 +93,15 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-    td: tapdance {
+       f_mt: fast_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+       td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <190>;
@@ -100,10 +109,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-        };
-          
-
+     };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -125,10 +131,10 @@ label= "BASE"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &lt ADJ Q     &kp W          &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt ADJ SEMI
+                &lt ADJ Q     &kp W          &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
     HYPR(ESC)   &kp Z         &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        &kp FSLH        MEH(TAB)
-                                             &td_sym       SPACENAV     &kp RET     &kp LSHFT   &kp BSPC    &td_num
+                                             &td_sym       &hl_l NAV SPACE   &kp RET    &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -137,24 +143,24 @@ label= "BASE"                              ;
 
                 nav_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "NAVI"                              ;
+label= "NAV"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃    F7     ┃     F8    ┃    F9     ┃    F12    ┃   ┃   MUTE    ┃  V DOWN   ┃    V UP   ┃   PLAY    ┃   SCNSHT  ┃
+//             ┃           ┃    MUTE   ┃  V DOWN   ┃   V UP    ┃    PLAY   ┃   ┃   HOME    ┃  P DOWN   ┃    P UP   ┃    END    ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃           ┃    F4     ┃     F5    ┃    F6     ┃    F11    ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
+//             ┃           ┃   1 PASS  ┃   S TAB   ┃    TAB    ┃   SCNSHT  ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    ESC    ┃           ┃    F1     ┃     F2    ┃    F3     ┃    F10    ┃   ┃   HOME    ┃  P DOWN   ┃    P UP   ┃    END    ┃           ┃    TAB    ┃
+// ┃    ESC    ┃    CTRL   ┃    CMD    ┃    COPY   ┃   SCNREC  ┃   PASTE   ┃   ┃   BACK    ┃  P TAB    ┃    N UP   ┃    FOR    ┃           ┃    TAB    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃    SYM    ┃           ┃   ENTER   ┃   ┃   LSHFT   ┃    BSPC   ┃    NUM    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &trans      &kp F7      &kp F8      &kp F9      &kp F12         &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP   &kp C_PP    &kp LS(LG(NUMBER_4))
-                &trans      &kp F4      &kp F5      &kp F6      &kp F11         &kp LEFT    &kp DOWN       &kp UP         &kp RIGHT   &trans
-    HYPR(ESC)   &trans      &kp F1      &kp F2      &kp F3      &kp F10         &kp HOME    &kp PG_DN      &kp PG_UP      &kp END     &trans    MEH(TAB)
-                                        &td_sym     SPACENAV    &kp RET         &kp LSHFT   &kp BSPC       &td_num
+                &trans     &kp C_MUTE          &kp C_VOL_DN  &kp C_VOL_UP         &kp C_PP                  &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &none      &kp LG(LS(SPACE))   &kp LS(TAB)   &kp TAB              &kp LS(LG(NUMBER_4))      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
+    HYPR(ESC)   &kp LCTRL  &kp LGUI            &kp LG(C)     &kp LG(LS(NUMBER_5)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   MEH(TAB)
+                                       &td_sym       &hl_l NAV SPACE   &kp RET    &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -180,7 +186,7 @@ label= "SYM"                               ;
                 &kp AT      &kp LT      &kp GT      &kp DQT     &kp GRAVE       &kp UNDER        &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
                 &kp COLON   &kp MINUS   &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL         &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
     HYPR(ESC)   &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp LA(NUMBER_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   MEH(TAB)
-                                        &to BASE    SPACENAV    &kp RET         &to BASE   &kp BSPC    &td_num
+                                        &to BASE    &hl_l NAV SPACE   &kp RET   &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -205,7 +211,7 @@ label= "NUM"                               ;
                 &trans     &kp LT            &kp GT            &kp KP_MULTIPLY   &trans               &trans      &kp KP_PLUS   &kp KP_MINUS  &kp KP_EQUAL  &kp PIPE      
                 &kp KP_N1  &kp KP_N2         &kp KP_N3         &kp KP_N4         &kp KP_N5            &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_N0
     HYPR(ESC)   &trans     &kp LS(NUMBER_3)  &kp PRCNT         &kp DLLR          &trans               &trans      &trans        &kp COMMA     &kp DOT       &kp FSLH       MEH(TAB)
-                                             &td_sym           SPACENAV          &kp RET              &to BASE    &kp BSPC      &to BASE
+                                             &td_sym           &hl_l NAV SPACE   &kp RET              &to BASE     &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -233,6 +239,32 @@ label= "ADJ"                               ;
                 &trans      &bt BT_NXT  &out OUT_TOG    &trans      &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
     &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans          &trans          &trans          &trans          &trans              
                                         &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+                fun_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "FUN"                              ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃    F7     ┃     F8    ┃    F9     ┃    F12    ┃   ┃           ┃    OPT    ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃           ┃    F4     ┃     F5    ┃    F6     ┃    F11    ┃   ┃           ┃    GUI    ┃   SHFT    ┃    CTRL   ┃    OPT    ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃    ESC    ┃           ┃    F1     ┃     F2    ┃    F3     ┃    F10    ┃   ┃           ┃           ┃           ┃           ┃           ┃    TAB    ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &trans      &kp F7      &kp F8      &kp F9      &kp F12         &trans      &kp LALT    &trans      &trans        &trans
+                &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &kp LGUI    &kp LSHFT   &kp LCTRL     &kp LALT
+    HYPR(ESC)   &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans        &trans    MEH(TAB)
+                                        &trans      &trans      &trans          &trans      &trans         &trans
                         >;
                 };
         };
