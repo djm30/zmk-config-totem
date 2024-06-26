@@ -40,6 +40,42 @@
 
 / {
        behaviors {
+        LeftClickRight {
+            timeout-ms = <30>;
+            bindings = <&mkp LCLK>;
+            key-positions = <16 17>;
+        };
+
+        RightClickRight {
+            timeout-ms = <30>;
+            bindings = <&mkp RCLK>;
+            key-positions = <26 27>;
+        };
+
+        MidClickRight{
+            timeout-ms = <30>;
+            bindings = <&mkp MCLK>;
+            key-positions = <16 17 18>;
+        };
+
+        LeftClickLeft {
+            timeout-ms = <30>;
+            bindings = <&mkp LCLK>;
+            key-positions = <12 13>;
+        };
+
+        RightClickLeft {
+            timeout-ms = <30>;
+            bindings = <&mkp RCLK>;
+            key-positions = <22 23>;
+        };
+
+        MidClickLeft{
+            timeout-ms = <30>;
+            bindings = <&mkp MCLK>;
+            key-positions = <11 12 13>;
+        };
+
          mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
