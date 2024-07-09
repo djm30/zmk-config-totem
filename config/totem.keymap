@@ -222,9 +222,9 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &kp LT            &kp GT      &kp STAR    &kp GRAVE       &none       &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
+                &none       &kp LT            &kp GT      &kp STAR    &none           &none       &kp LBRC    &kp RBRC    &kp PIPE    &none       
                 &kp COLON   &kp MINUS         &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL    &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
-    &none       &kp AMPS    &kp LA(NUMBER_3)  &kp DLLR    &kp DQT     &kp grave       &kp UNDER   &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   &none
+    &none       &kp AMPS    &kp LA(NUMBER_3)  &kp DLLR    &kp DQT     &kp GRAVE       &kp UNDER   &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   &none
                                              &none    &to BASE   &hl_l NAV SPACE         &f_mt LSHFT BSPC        &td_num   &none
                         >;
                 };
