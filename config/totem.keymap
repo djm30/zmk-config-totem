@@ -63,10 +63,10 @@
               key-positions = <1 2>;
             };
             
-            V  {
+            B  {
               timeout-ms = <30>;
-              bindings = <&kp V>;
-              key-positions = <24 25>;
+              bindings = <&kp B>;
+              key-positions = <2 3>;
             };
             
             J  {
