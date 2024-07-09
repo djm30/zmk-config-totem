@@ -51,7 +51,7 @@
               key-positions = <13 24>;
             };
 
-            Enter  {
+            EnterTwo  {
               timeout-ms = <30>;
               bindings = <&kp RET>;
               key-positions = <13 14>;
