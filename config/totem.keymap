@@ -75,7 +75,7 @@
               key-positions = <6 7>;
             };
 
-        }
+        };
 
 
        behaviors {
