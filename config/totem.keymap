@@ -45,33 +45,31 @@
 
         combos {
             compatible = "zmk,combos";
-            
-
-            Enter = {
+            Enter  {
               timeout-ms = <30>;
               bindings = <&kp RET>;
               key-positions = <13 24>;
             };
 
-            Escape = {
+            Escape  {
               timeout-ms = <30>;
               bindings = <&kp RET>;
               key-positions = <11 12>;
             };
              
-            Q = {
+            Q  {
               timeout-ms = <30>;
               bindings = <&kp Q>;
               key-positions = <1 2>;
             };
             
-            V = {
+            V  {
               timeout-ms = <30>;
               bindings = <&kp V>;
               key-positions = <24 25>;
             };
             
-            J = {
+            J  {
               timeout-ms = <30>;
               bindings = <&kp J>;
               key-positions = <6 7>;
