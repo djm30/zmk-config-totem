@@ -41,6 +41,14 @@
  };
 
 / {
+       combos {
+         compatible="zmk,combos";
+
+         QKey = {
+
+         }
+
+       }
 
        behaviors {
          mo_sl: behavior_mo_sl {
@@ -161,7 +169,7 @@ label= "NAV"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp TAB               &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &kp C_PP                  &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
-                &kp ESC               &mkp MCLK    &mkp RCLK   &kp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
+                &kp ESC               &mkp MCLK    &mkp RCLK   &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
                                        &none       &hl_l NAV SPACE   &td_sym    &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
