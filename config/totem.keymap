@@ -51,9 +51,15 @@
               key-positions = <13 24>;
             };
 
-            Escape  {
+            Enter  {
               timeout-ms = <30>;
               bindings = <&kp RET>;
+              key-positions = <13 14>;
+            };
+
+            Escape  {
+              timeout-ms = <30>;
+              bindings = <&kp ESC>;
               key-positions = <11 12>;
             };
              
@@ -172,7 +178,7 @@ label= "BASE"                              ;
 
                 &none         &lt ADJ W      &kp F         &kp P        &none           &none       &kp L          &kp U         &lt FUN Y      &none
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
-    &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp B           &kp K       &kp H       &kp COMMA     &kp DOT     MEH(FSLH)        &none
+    &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H       &kp COMMA     &kp DOT     MEH(FSLH)        &none
                                              &none    &td_sym   &hl_l NAV SPACE         &f_mt LSHFT BSPC        &td_num   &none
                         >;
                 };
@@ -197,7 +203,7 @@ label= "NAV"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
-                &kp ESC               &mkp MCLK    &mkp RCLK     &kp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
+                &kp ESC               &mkp MCLK    &mkp RCLK     &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
                                              &none    &td_sym   &hl_l NAV SPACE         &f_mt LSHFT BSPC        &td_num   &none
                         >;
