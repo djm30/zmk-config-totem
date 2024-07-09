@@ -57,28 +57,25 @@
               key-positions = <11 12>;
             };
              
-            Q  {
+            QCombo  {
               timeout-ms = <30>;
               bindings = <&kp Q>;
               key-positions = <1 2>;
             };
             
-            B  {
+            BCombo  {
               timeout-ms = <30>;
               bindings = <&kp B>;
               key-positions = <2 3>;
             };
             
-            J  {
+            JCombo  {
               timeout-ms = <30>;
               bindings = <&kp J>;
               key-positions = <6 7>;
             };
 
         }
-
-
-
 
 
        behaviors {
