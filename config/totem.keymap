@@ -41,15 +41,6 @@
  };
 
 / {
-       combos {
-         compatible="zmk,combos";
-
-         QKey = {
-
-         }
-
-       }
-
        behaviors {
          mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
