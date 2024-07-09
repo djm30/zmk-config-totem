@@ -42,47 +42,6 @@
 
 / {
 
-       combos {
-        compatible = "zmk,combos";
-
-        LeftClickRight {
-            timeout-ms = <30>;
-            bindings = <&mkp LCLK>;
-            key-positions = <16 17>;
-        };
-
-        RightClickRight {
-            timeout-ms = <30>;
-            bindings = <&mkp RCLK>;
-            key-positions = <27 28>;
-        };
-
-        MidClickRight{
-            timeout-ms = <30>;
-            bindings = <&mkp MCLK>;
-            key-positions = <16 17 18>;
-        };
-
-        LeftClickLeft {
-            timeout-ms = <30>;
-            bindings = <&mkp LCLK>;
-            key-positions = <12 13>;
-        };
-
-        RightClickLeft {
-            timeout-ms = <30>;
-            bindings = <&mkp RCLK>;
-            key-positions = <23 24>;
-        };
-
-        MidClickLeft{
-            timeout-ms = <30>;
-            bindings = <&mkp MCLK>;
-            key-positions = <11 12 13>;
-        };
-       };
-
-
        behaviors {
          mo_sl: behavior_mo_sl {
             compatible = "zmk,behavior-hold-tap";
@@ -177,8 +136,8 @@ label= "BASE"                              ;
 
                 &lt ADJ Q     &kp W          &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
-    HYPR(ESC)   &kp Z         &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        &kp FSLH        MEH(TAB)
-                                             &td_sym       &hl_l NAV SPACE   &kp RET    &td_num      &f_mt LSHFT BSPC   &mo FUN
+    &none       HYPER(Z)      &kp X          &kp C         &kp D        &kp V           &kp K       &kp H       &kp COMMA     &kp DOT     MEH(FSLH)        &none
+                                             &none       &hl_l NAV SPACE   &td_sym &td_num      &f_mt LSHFT BSPC   &none
                         >;
                 };
 
@@ -192,19 +151,19 @@ label= "NAV"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃    MUTE   ┃  V DOWN   ┃   V UP    ┃    PLAY   ┃   ┃   HOME    ┃  P DOWN   ┃    P UP   ┃    END    ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃           ┃   1 PASS  ┃   S TAB   ┃    TAB    ┃   SCNSHT  ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
+//             ┃           ┃    MCLK   ┃    RCLK   ┃    LCLK   ┃   ENTER   ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    ESC    ┃    CTRL   ┃    CMD    ┃    COPY   ┃   SCNREC  ┃   PASTE   ┃   ┃   BACK    ┃  P TAB    ┃    N UP   ┃    FOR    ┃           ┃    TAB    ┃
+// ┃    ESC    ┃   SCNREC  ┃    CUT    ┃    COPY   ┃   SCNSHT  ┃   PASTE   ┃   ┃   BACK    ┃  P TAB    ┃    N UP   ┃    FOR    ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃    SYM    ┃           ┃   ENTER   ┃   ┃   LSHFT   ┃    BSPC   ┃    NUM    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &trans     &kp C_MUTE          &kp C_VOL_DN  &kp C_VOL_UP         &kp C_PP                  &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
-                &none      &kp LG(LS(SPACE))   &kp LS(TAB)   &kp TAB              &kp LS(LG(NUMBER_4))      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
-    HYPR(ESC)   &kp LCTRL  &kp LGUI            &kp LG(C)     &kp LG(LS(NUMBER_5)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   MEH(TAB)
-                                       &td_sym       &hl_l NAV SPACE   &kp RET    &td_num      &f_mt LSHFT BSPC   &mo FUN
+                &kp TAB               &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &kp C_PP                  &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &kp ESC               &mkp MCLK    &mkp RCLK   &kp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
+    &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
+                                       &none       &hl_l NAV SPACE   &td_sym    &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -229,8 +188,8 @@ label= "SYM"                               ;
 
                 &kp AT      &kp LT      &kp GT      &kp DQT     &kp GRAVE       &kp UNDER        &kp LBRC    &kp RBRC    &kp PIPE    &kp BSLH       
                 &kp COLON   &kp MINUS   &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL         &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
-    HYPR(ESC)   &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp LA(NUMBER_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   MEH(TAB)
-                                        &to BASE    &hl_l NAV SPACE   &kp RET   &td_num      &f_mt LSHFT BSPC   &mo FUN
+    &none       &kp TILDE   &kp AMPS    &kp PRCNT   &kp DLLR    &kp STAR        &kp LA(NUMBER_3) &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   &none
+                                        &none    &hl_l NAV SPACE   &to BASE   &td_num      &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
 
@@ -254,7 +213,7 @@ label= "NUM"                               ;
 
                 &trans     &kp LT            &kp GT            &kp KP_MULTIPLY   &trans               &trans      &kp KP_PLUS   &kp KP_MINUS  &kp KP_EQUAL  &kp PIPE      
                 &kp KP_N1  &kp KP_N2         &kp KP_N3         &kp KP_N4         &kp KP_N5            &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_N0
-    HYPR(ESC)   &trans     &kp LS(NUMBER_3)  &kp PRCNT         &kp DLLR          &trans               &trans      &trans        &kp COMMA     &kp DOT       &kp FSLH       MEH(TAB)
+    &none   &trans     &kp LS(NUMBER_3)  &kp PRCNT         &kp DLLR          &trans               &trans      &trans        &kp COMMA     &kp DOT       &kp FSLH       &none
                                              &td_sym           &hl_l NAV SPACE   &kp RET              &to BASE     &f_mt LSHFT BSPC   &mo FUN
                         >;
                 };
@@ -281,7 +240,7 @@ label= "ADJ"                               ;
 
                 &sys_reset  &bt BT_CLR  &out OUT_BLE    &trans      &trans          &trans          &trans          &trans          &trans          &sys_reset
                 &trans      &bt BT_NXT  &out OUT_TOG    &trans      &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
-    &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans          &trans          &trans          &trans          &trans              
+    &trans      &trans      &bt BT_PRV  &trans          &bootloader &trans          &trans          &trans          &trans          &trans          &trans     &none         
                                         &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
                         >;
                 };
@@ -307,7 +266,7 @@ label= "FUN"                              ;
 
                 &trans      &kp F7      &kp F8      &kp F9      &kp F12         &trans      &kp LALT    &trans      &trans        &trans
                 &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &kp LGUI    &kp LSHFT   &kp LCTRL     &kp LALT
-    HYPR(ESC)   &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans        &trans    MEH(TAB)
+    HYPR(ESC)   &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans        &trans  &none
                                         &trans      &trans      &trans          &trans      &trans         &trans
                         >;
                 };
