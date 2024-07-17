@@ -272,7 +272,7 @@
           #binding-cells = <0>;
           compatible = "zmk,behavior-num-word";
           continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-           layers = <0 1 3>;
+           layers = <NUM>;
           ignore-numbers;
         };
      };
