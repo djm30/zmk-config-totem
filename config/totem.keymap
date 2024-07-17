@@ -42,9 +42,7 @@
      quick-release;
  };
 
-&num_word {
-  layers = <0 1 3>;
-};
+
 
 / {
 
@@ -269,6 +267,13 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+      num_word: num_word {
+          #binding-cells = <0>;
+          compatible = "zmk,behavior-num-word";
+          continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+           layers = <0 1 3>;
+          ignore-numbers;
         };
      };
 
