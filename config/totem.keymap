@@ -146,19 +146,19 @@
 
             LClick {
               timeout-ms = <30>;
-              bindings = <&kp LCLK>;
+              bindings = <&mkp LCLK>;
               key-positions = <13 24>;
             }; 
 
             RClick {
               timeout-ms = <30>;
-              bindings = <&kp RCLK>;
+              bindings = <&mkp RCLK>;
               key-positions = <12 23>;
             }; 
 
             MClick  {
               timeout-ms = <30>;
-              bindings = <&kp MCLK>;
+              bindings = <&mkp MCLK>;
               key-positions = <11 22>;
             }; 
 
@@ -277,8 +277,7 @@
           #binding-cells = <0>;
           compatible = "zmk,behavior-num-word";
           continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-           layers = <NUM>;
-          ignore-numbers;
+          layers = <NUM>;
         };
      };
 
