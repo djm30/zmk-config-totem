@@ -252,7 +252,6 @@
        nav: nav {
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
             flavor = "hold-preferred";
             retro-tap;
             bindings = <&kp LSHFT, &sl NAV>;
