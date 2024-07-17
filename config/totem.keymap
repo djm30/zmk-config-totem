@@ -57,13 +57,13 @@
             Tab  {
               timeout-ms = <30>;
               bindings = <&kp TAB>;
-              key-positions = <11 12>;
+              key-positions = <17 18>;
             };
 
             Enter  {
               timeout-ms = <30>;
               bindings = <&kp RET>;
-              key-positions = <14 15>;
+              key-positions = <12 13>;
             };
 
             Enter2  {
@@ -75,13 +75,13 @@
             Backspace  {
               timeout-ms = <30>;
               bindings = <&kp BSPC>;
-              key-positions = <24 25>;
+              key-positions = <23 24>;
             };
 
             Backspace2  {
               timeout-ms = <30>;
               bindings = <&kp BSPC>;
-              key-positions = <28 29>;
+              key-positions = <27 28>;
             };
 
             QCombo  {
@@ -111,73 +111,73 @@
             LPar  {
               timeout-ms = <30>;
               bindings = <&kp LPAR>;
-              key-positions = <3 14>;
+              key-positions = <3 13>;
             };  
 
             RPar  {
               timeout-ms = <30>;
               bindings = <&kp RPAR>;
-              key-positions = <6 17>;
+              key-positions = <6 16>;
             };  
 
             LCurl  {
               timeout-ms = <30>;
               bindings = <&kp LBRC>;
-              key-positions = <2 13>;
+              key-positions = <2 12>;
             };  
 
             RCurl  {
               timeout-ms = <30>;
               bindings = <&kp RBRC>;
-              key-positions = <7 18>;
+              key-positions = <7 17>;
             };  
 
             LBracket  {
               timeout-ms = <30>;
               bindings = <&kp LBKT>;
-              key-positions = <1 12>;
+              key-positions = <1 11>;
             };  
 
             RBracket  {
               timeout-ms = <30>;
               bindings = <&kp RBKT>;
-              key-positions = <8 19>;
+              key-positions = <8 18>;
             }; 
 
             LClick {
               timeout-ms = <30>;
               bindings = <&kp LCLK>;
-              key-positions = <14 25>;
+              key-positions = <13 24>;
             }; 
 
             RClick {
               timeout-ms = <30>;
               bindings = <&kp RCLK>;
-              key-positions = <13 24>;
+              key-positions = <12 23>;
             }; 
 
             MClick  {
               timeout-ms = <30>;
               bindings = <&kp MCLK>;
-              key-positions = <12 23>;
+              key-positions = <11 22>;
             }; 
 
             SingleQuote {
               timeout-ms = <30>;
               bindings = <&kp SQT>;
-              key-positions = <17 28>;
+              key-positions = <16 27>;
             }; 
 
             DoubleQuote  {
               timeout-ms = <30>;
               bindings = <&kp DQT>;
-              key-positions = <18 29>;
+              key-positions = <17 28>;
             }; 
 
             Grave  {
               timeout-ms = <30>;
               bindings = <&kp GRAVE>;
-              key-positions = <19 30>;
+              key-positions = <18 29>;
             }; 
 
             MacroLayer  {
@@ -186,6 +186,11 @@
               key-positions = <7 8>;
             }; 
             
+            CapsWord  {
+              timeout-ms = <30>;
+              bindings = <&caps_word>;
+              key-positions = <28 29>;
+            }; 
 
         };
 
