@@ -119,13 +119,13 @@
 
             LCurl  {
               timeout-ms = <30>;
-              bindings = <&kp LBRA>;
+              bindings = <&kp LBRC>;
               key-positions = <2 13>;
             };  
 
             RCurl  {
               timeout-ms = <30>;
-              bindings = <&kp RBRA>;
+              bindings = <&kp RBRC>;
               key-positions = <7 18>;
             };  
 
@@ -253,7 +253,8 @@
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
+            retro-tap;
             bindings = &kp LSHFT, &sl NAV>;
         };
        td: tapdance {
@@ -319,6 +320,28 @@ label= "NAV"                               ;
                         >;
                 };
 
+                macro_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "MAC"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃    MUTE   ┃  V DOWN   ┃   V UP    ┃           ┃   ┃           ┃  P DOWN   ┃    P UP   ┃    END    ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃    ESC    ┃    MCLK   ┃    RCLK   ┃    LCLK   ┃   ENTER   ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃    TAB    ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃   SCNREC  ┃    CUT    ┃    COPY   ┃   SCNSHT  ┃   PASTE   ┃   ┃   BACK    ┃  P TAB    ┃    N UP   ┃    FOR    ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃    NUM    ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &kp ESC               &mkp MCLK    &mkp RCLK     &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
+    &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
+                                             &none  &hl_l NAV SPACE   &hl_l NUM ENTER    &td_sym  &f_mt LSHFT BSPC    &none
+                        >;
+                };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
