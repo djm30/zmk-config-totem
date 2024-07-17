@@ -255,7 +255,7 @@
             quick-tap-ms = <200>;
             flavor = "hold-preferred";
             retro-tap;
-            bindings = &kp LSHFT, &sl NAV>;
+            bindings = <&kp LSHFT, &sl NAV>;
         };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
