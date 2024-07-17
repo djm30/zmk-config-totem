@@ -249,6 +249,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+       nav: nav {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = &kp LSHFT, &sl NAV>;
+        };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -282,7 +289,7 @@ label= "BASE"                              ;
                 &none         &lt ADJ W      &kp F         &kp P        &none           &none       &kp L          &kp U         &lt FUN Y      &none
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
     &none       &key_repeat   &kp X          &kp C         &kp D        &kp V           &kp K       &kp H       &kp COMMA     &kp DOT     MEH(FSLH)        &none
-                                             &none         &kp SPACE    &num_word       &td_sym  &f_mt LSHFT BSPC    &none
+                                             &none         &kp SPACE    &td_num         &td_sym     &nav    &none
                         >;
                 };
 
