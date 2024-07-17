@@ -263,7 +263,7 @@
             flavor = "hold-preferred";
             #binding-cells = <2>;
             retro-tap;
-            bindings = <&kp>, <&sl>;
+            bindings = <&kp>, <&to>;
         };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
@@ -304,7 +304,7 @@ label= "BASE"                              ;
                 &none         &lt ADJ W      &kp F         &kp P        &none           &none       &kp L          &kp U         &lt FUN Y      &none
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
     &none       &key_repeat   &kp X          &kp C         &kp D        &kp V           &kp K       &kp H       &kp COMMA     &kp DOT     MEH(FSLH)        &none
-                                             &none         &kp SPACE    &num_word         &td_sym     &nav LSHFT NAV   &none
+                                             &none         &kp SPACE    &td_num         &td_sym     &nav LSHFT NAV   &none
                         >;
                 };
 
@@ -330,7 +330,7 @@ label= "NAV"                               ;
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &kp ESC               &mkp MCLK    &mkp RCLK     &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &to BASE    &num_word         &td_sym     &to NAV &none
+                                             &none         &to BASE    &td_num         &td_sym     &to BASE &none
                         >;
                 };
 
@@ -353,7 +353,7 @@ label= "MAC"                               ;
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &kp ESC               &mkp MCLK    &mkp RCLK     &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &kp SPACE    &num_word         &td_sym     &nav LSHFT NAV     &none
+                                             &none         &kp SPACE    &td_num         &td_sym     &nav LSHFT NAV     &none
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -378,7 +378,7 @@ label= "SYM"                               ;
                 &none       &kp LT            &kp GT      &kp STAR    &none           &none       &kp LBRC    &kp RBRC    &kp PIPE    &none       
                 &kp COLON   &kp MINUS         &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL    &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
     &none       &kp AMPS    &kp LA(NUMBER_3)  &kp DLLR    &kp DQT     &kp GRAVE       &kp UNDER   &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   &none
-                                             &none         &kp SPACE    &num_word      &to BASE     &nav LSHFT NAV    &none
+                                             &none         &kp SPACE    &td_num      &to BASE     &nav LSHFT NAV    &none
                         >;
                 };
 
