@@ -177,9 +177,9 @@
               key-positions = <19 30>;
             }; 
 
-            Macro  {
+            MacroLayer  {
               timeout-ms = <30>;
-              bindings = <&sl MACRO>;
+              bindings = <&sl MAC>;
               key-positions = <7 8>;
             }; 
             
