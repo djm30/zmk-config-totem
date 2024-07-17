@@ -316,7 +316,7 @@ label= "NAV"                               ;
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &kp ESC               &mkp MCLK    &mkp RCLK     &mkp LCLK     &kp RET      &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &kp TAB
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &to BASE    &td_num         &td_sym     &nav LSFHT NAV     &none
+                                             &none         &to BASE    &td_num         &td_sym     &to NAV &none
                         >;
                 };
 
