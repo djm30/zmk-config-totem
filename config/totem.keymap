@@ -393,7 +393,7 @@ label= "NUM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp KP_N1             &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &kp KP_N0
-                &hm_l LALT MULTIPLY   &hm_l LCTRL KP_MINUS  &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &none      
+                    &hm_l LALT MULTIPLY   &hm_l LCTRL KP_SUBTRACT  &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &none      
     &kp KP_N1   &NW TILDE             &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &kp KP_N0
                                              &none        &NW SPACE    &to BASE                             &td_sym     &nav LSHFT NAV     &none
                         >;
