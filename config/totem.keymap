@@ -392,8 +392,8 @@ label= "NUM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp KP_N1             &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &none
-                &hm_l LALT STAR       &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &kp KP_N0       
+                &none                  &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &none
+                &hm_l LALT KP_N1       &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &kp KP_N0       
     &kp STAR   &NW TILDE             &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
                                              &none        &NW SPACE    &to BASE                             &td_sym     &nav LSHFT NAV     &none
                         >;
