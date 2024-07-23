@@ -60,7 +60,7 @@
             compatible = "zmk,combos";
             Escape  {
               timeout-ms = <30>;
-              bindings = <&kp ESC>;
+              bindings = <&NW ESC>;
               key-positions = <11 12>;
             };
 
@@ -383,18 +383,18 @@ label= "NUM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     *     ┃     -     ┃     +     ┃     =     ┃     <     ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
+//             ┃     1     ┃     -     ┃     +     ┃     =     ┃     <     ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃     0     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃     1     ┃     ~     ┃     £     ┃     %     ┃     $     ┃     >     ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃     0     ┃
+// ┃     *     ┃     ~     ┃     £     ┃     %     ┃     $     ┃     >     ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃     0     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃    BASE   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp KP_N1             &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &kp KP_N0
-                &hm_l LALT STAR       &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &none      
-    &kp KP_N1   &NW TILDE             &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &kp KP_N0
+                &kp KP_N1             &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &none
+                &hm_l LALT STAR       &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &kp KP_N0       
+    &kp STAR   &NW TILDE             &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
                                              &none        &NW SPACE    &to BASE                             &td_sym     &nav LSHFT NAV     &none
                         >;
                 };
