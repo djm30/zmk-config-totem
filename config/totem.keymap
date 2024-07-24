@@ -255,7 +255,7 @@
             flavor = "hold-preferred";
             #binding-cells = <2>;
             retro-tap;
-            bindings = <&kp>, <&to>;
+            bindings = <&kp>, <&sl>;
         };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
@@ -293,9 +293,9 @@ label= "BASE"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none         &lt ADJ W      &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &none
+                &key_repeat   &lt ADJ W      &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
-    &key_repeat HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        MEH(FSLH)             &lt FUN SEMI
+    &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        MEH(FSLH)             &none
                                              &none         &kp SPACE    &to NUM         &td_sym     &nav LSHFT NAV   &none
                         >;
                 };
@@ -381,20 +381,20 @@ label= "SYM"                               ;
 label= "NUM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃           ┃
+//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃     0     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     1     ┃     -     ┃     +     ┃     =     ┃     <     ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃     0     ┃
+//             ┃     *     ┃     -     ┃     +     ┃     =     ┃     <     ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃     *     ┃     ~     ┃     £     ┃     %     ┃     $     ┃     >     ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃     0     ┃
+// ┃           ┃     ~     ┃     £     ┃     %     ┃     $     ┃     >     ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃    BASE   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none                  &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &none
-                &hm_l LALT KP_N1       &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &kp KP_N0       
-    &kp STAR   &NW TILDE             &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
+                &kp NP_N1              &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &kp KP_N0
+                &hm_l LALT STAR        &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &none       
+    &none       &NW TILDE              &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
                                              &none        &NW SPACE    &to BASE                             &td_sym     &nav LSHFT NAV     &none
                         >;
                 };
