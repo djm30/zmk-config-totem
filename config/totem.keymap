@@ -240,7 +240,6 @@
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
-            quick-tap-ms = <-1>;
             #binding-cells = <2>;
             retro-tap;
             bindings = <&mo>, <&sk>;
