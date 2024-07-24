@@ -60,7 +60,7 @@
             wait-ms = <30>;
             bindings 
                 = <&kp EQUAL> 
-                , <&kp LT>
+                , <&kp GT>
                 ;
           };
 
