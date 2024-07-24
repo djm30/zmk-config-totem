@@ -68,9 +68,12 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             wait-ms = <30>;
+            tap-ms = <40>;
             bindings
                 = <&macro_param_1to1>
-                , <&kp MACRO_PLACEHOLDER &kp MACRO_PLACEHOLDER>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
                 ;
           };
         };
@@ -209,7 +212,7 @@
        behaviors {
         nav: nav {
             compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             flavor = "hold-preferred";
             #binding-cells = <2>;
             retro-tap;
