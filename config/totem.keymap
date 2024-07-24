@@ -27,7 +27,6 @@
 #define ADJ  5
 #define FUN  6
 
-#define MO_SL(layer) &mo_sl layer layer
 #define HYPR(kc) &mt LC(LG(LS(LALT))) kc
 #define MEH(kc) &mt LC(LS(LALT)) kc
 
@@ -208,14 +207,6 @@
 
 
        behaviors {
-         mo_sl: behavior_mo_sl {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <170>;
-            bindings = <&mo>, <&sl>;
-           };
-
          td_num: num_layer_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -229,7 +220,7 @@
             tapping-term-ms = <200>;
             bindings = <&sl SYM>, <&to SYM>;
           };
-         hm_l: homerow_mods_left {
+         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
@@ -237,42 +228,19 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        hm_r: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hl_l: homerow_layers_left {
+        hl: homerow_layers {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <220>;
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
-        };
-        hl_r: homerow_layers_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-       f_mt: fast_mod_tap {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;
-            #binding-cells = <2>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
         };
        nav: nav {
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
+            quick-tap-ms = <-1>;
             #binding-cells = <2>;
             retro-tap;
             bindings = <&mo>, <&sk>;
@@ -284,12 +252,6 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-      num_word: num_word {
-          #binding-cells = <0>;
-          compatible = "zmk,behavior-num-word";
-          continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-          layers = <NUM>;
         };
      };
 
@@ -314,7 +276,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &key_repeat   &lt ADJ W      &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
-                &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
+                &hm LALT A    &hm LCTRL R    &hm LSHFT S   &hm LGUI T   &kp G           &kp M       &hm RGUI N     &hm RSHFT E   &hm RCTRL I    &hm RALT O
     &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        MEH(FSLH)             &none
                                              &none         &kp SPACE    &to NUM         &td_sym     &nav NAV LSHFT    &none
                         >;
@@ -413,8 +375,8 @@ label= "NUM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none                  &none              &kp LS(NUMBER_3)   &none              &none                 &none           &none              &none             &none              &none
-                &hm_l LALT KP_N1       &hm_l LCTRL KP_N2  &hm_l LSHFT KP_N3  &hm_l LGUI KP_N4   &kp KP_N5             &kp KP_N6       &hm_r RGUI KP_N7   &hm_r RSHFT KP_N8 &hm_r RCTRL KP_N9  &hm_r RALT KP_N0
-    &none       &hm TILDE              &none              &none              &none              &none                 &kp AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
+                &hm LALT KP_N1         &hm LCTRL KP_N2    &hm LSHFT KP_N3    &hm LGUI KP_N4     &kp KP_N5             &kp KP_N6       &hm RGUI KP_N7     &hm RSHFT KP_N8   &hm RCTRL KP_N9    &hm RALT KP_N0
+    &none       &kp TILDE              &none              &none              &none              &none                 &kp AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
                                              &none        &kp SPACE          &td_sym                                  &to BASE     &nav LSHFT NAV     &none
                         >;
                 };
