@@ -60,7 +60,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             bindings 
-                = <&kp EQUALS> 
+                = <&kp EQUAL> 
                 , <&kp LT>
                 ;
           };
@@ -275,7 +275,7 @@
             flavor = "hold-preferred";
             #binding-cells = <2>;
             retro-tap;
-            bindings = <&kp>, <&to>;
+            bindings = <&mo>, <&sk>;
         };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
@@ -316,7 +316,7 @@ label= "BASE"                              ;
                 &key_repeat   &lt ADJ W      &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
                 &hm_l LALT A  &hm_l LCTRL R  &hm_l LSHFT S &hm_l LGUI T &kp G           &kp M       &hm_r RGUI N   &hm_r RSHFT E &hm_r RCTRL I  &hm_r RALT O
     &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        MEH(FSLH)             &none
-                                             &none         &kp SPACE    &to NUM         &td_sym     &nav LSHFT NAV   &none
+                                             &none         &kp SPACE    &to NUM         &td_sym     &nav NAV LSHFT    &none
                         >;
                 };
 
