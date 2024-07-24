@@ -207,6 +207,14 @@
 
 
        behaviors {
+        nav: nav {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            #binding-cells = <0>;
+            retro-tap;
+            bindings = <&mo NAV>, <&sk LSHFT>;
+        };
          td_num: num_layer_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -214,13 +222,19 @@
             bindings = <&sl NUM>, <&to NUM>;
           };
 
-         td_sym: sym_layer_dance {
+       td_sym: sym_layer_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl SYM>, <&to SYM>;
           };
-         hm: homerow_mods {
+        td_nav: nav_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&nav>, <&caps_word>;
+         };
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
@@ -228,7 +242,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        hl: homerow_layers {
+      hl: homerow_layers {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <220>;
@@ -236,14 +250,7 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
-       nav: nav {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            #binding-cells = <2>;
-            retro-tap;
-            bindings = <&mo>, <&sk>;
-        };
+
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -277,7 +284,7 @@ label= "BASE"                              ;
                 &key_repeat   &lt ADJ W      &kp F         &kp P        &kp B           &kp J       &kp L          &kp U         &kp Y          &lt FUN SEMI
                 &hm LALT A    &hm LCTRL R    &hm LSHFT S   &hm LGUI T   &kp G           &kp M       &hm RGUI N     &hm RSHFT E   &hm RCTRL I    &hm RALT O
     &none       HYPR(Z)       &kp X          &kp C         &kp D        &kp V           &kp K       &kp H          &kp COMMA     &kp DOT        MEH(FSLH)             &none
-                                             &none         &kp SPACE    &to NUM         &td_sym     &nav NAV LSHFT    &none
+                                             &none         &kp SPACE    &td_num         &td_sym     &td_nav   &none
                         >;
                 };
 
@@ -303,7 +310,7 @@ label= "NAV"                               ;
                 &none    &none        &none           &none         &none               &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &to NAV  &mkp MCLK    &mkp RCLK       &mkp LCLK     &none               &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
     &none       &none    &none        &kp LC(LEFT)    &kp LC(RIGHT) &none               &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &to BASE    &td_num        &sk LSHFT     &to BASE &none
+                                             &none         &to BASE    &td_num          &sk LSHFT     &to BASE &none
                         >;
                 };
 
@@ -326,7 +333,7 @@ label= "MAC"                               ;
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &none                 &none        &none         &none                &none                  &none      &none          &none     &none     &none
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &kp SPACE    &td_sym         &td_num     &nav LSHFT NAV     &none
+                                        &trans      &trans      &trans          &trans      &trans         &trans
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -351,7 +358,7 @@ label= "SYM"                               ;
                 &none       &DB MINUS       &DB PLUS    &DB EQUAL   &none                 &none       &DB AMPS    &DB PIPE    &none       &none       
                 &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &ARROW      &kp DLLR    &kp PIPE    &kp SEMI       
     &none       &none       &kp LT          &kp GT      &kp AMPS    &kp LA(NUMBER_3)      &kp UNDER   &kp PRCNT   &kp CARET   &kp FSLH    &kp QMARK   &none
-                                            &none       &kp SPACE   &to BASE              &td_num     &nav LSHFT NAV    &none
+                                            &none       &kp SPACE   &td_num               &to BASE     &nav LSHFT NAV    &none
                         >;
                 };
 
@@ -376,7 +383,7 @@ label= "NUM"                               ;
                 &none                  &none              &kp LS(NUMBER_3)   &none              &none                 &none           &none              &none             &none              &none
                 &hm LALT KP_N1         &hm LCTRL KP_N2    &hm LSHFT KP_N3    &hm LGUI KP_N4     &kp KP_N5             &kp KP_N6       &hm RGUI KP_N7     &hm RSHFT KP_N8   &hm RCTRL KP_N9    &hm RALT KP_N0
     &none       &kp TILDE              &none              &none              &none              &none                 &kp AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
-                                             &none        &kp SPACE          &td_sym                                  &to BASE     &nav LSHFT NAV     &none
+                                             &none        &kp SPACE          &to BASE                                 &td_sym     &nav LSHFT NAV     &none
                         >;
                 };
 
