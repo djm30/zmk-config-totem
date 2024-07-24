@@ -255,7 +255,7 @@
             flavor = "hold-preferred";
             #binding-cells = <2>;
             retro-tap;
-            bindings = <&kp>, <&sl>;
+            bindings = <&kp>, <&to>;
         };
        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
