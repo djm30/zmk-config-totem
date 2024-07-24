@@ -58,12 +58,17 @@
           ARROW: arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUALS &kp LT> ;
+            wait-ms = <30>;
+            bindings 
+                = <&kp EQUALS> 
+                , <&kp LT>
+                ;
           };
 
           DB: double{
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
+            wait-ms = <30>;
             bindings
                 = <&macro_param_1to1>
                 , <&kp MACRO_PLACEHOLDER &kp MACRO_PLACEHOLDER>
@@ -383,8 +388,8 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none       &DB MINUS       &DB PLUS    &DB EQUAL   &none                 &none       &DB AMPS    &DB PIPE    &none       &none       
-                &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &kp LPAR    &kp DLLR    &kp PIPE    &kp SEMI       
-    &none       &none       &kp LT          &kp GT      &kp AMPS    &kp LA(NUMBER_3)      &kp UNDER   &kp LBKT    &kp RBKT    &kp FSLH    &kp QMARK   &none
+                &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &ARROW      &kp DLLR    &kp PIPE    &kp SEMI       
+    &none       &none       &kp LT          &kp GT      &kp AMPS    &kp LA(NUMBER_3)      &kp UNDER   &kp PRCNT   &kp CARET   &kp FSLH    &kp QMARK   &none
                                             &none       &kp SPACE   &to BASE              &td_num     &nav LSHFT NAV    &none
                         >;
                 };
