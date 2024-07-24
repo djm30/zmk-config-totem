@@ -58,8 +58,7 @@
           ARROW: arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&kp EQUALS &kp LT> 
+            bindings = <&kp EQUALS &kp LT> ;
           };
 
           DB: double{
@@ -68,6 +67,7 @@
             bindings
                 = <&macro_param_1to1>
                 , <&kp MACRO_PLACEHOLDER &kp MACRO_PLACEHOLDER>
+                ;
           };
         };
 
