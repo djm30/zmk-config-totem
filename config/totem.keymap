@@ -54,6 +54,21 @@
                 , <&to 0>
                 ;
           };
+
+          ARROW: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp EQUALS &kp LT> 
+          };
+
+          DB: double{
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER &kp MACRO_PLACEHOLDER>
+          };
         };
 
         combos {
@@ -182,7 +197,7 @@
               timeout-ms = <30>;
               bindings = <&caps_word>;
               key-positions = <28 29>;
-            }; 
+            };  
 
         };
 
@@ -312,17 +327,17 @@ label= "NAV"                               ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃    NAV    ┃    MCLK   ┃    RCLK   ┃    LCLK   ┃           ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃   BACK    ┃  P TAB    ┃    N UP   ┃    FOR    ┃           ┃           ┃
+// ┃           ┃           ┃           ┃  SPACE L  ┃  SPACE R  ┃           ┃   ┃   BACK    ┃   P TAB   ┃   N TAB   ┃    FOR    ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃    NUM    ┃           ┃
+//                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃   BASE    ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none    &none        &none         &none         &none               &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
-                &to NAV  &mkp MCLK    &mkp RCLK     &mkp LCLK     &none               &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
-    &none       &none    &none        &none         &none         &none               &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &to BASE    &to NUM      &td_sym     &to BASE &none
+                &none    &none        &none           &none         &none               &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &to NAV  &mkp MCLK    &mkp RCLK       &mkp LCLK     &none               &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
+    &none       &none    &none        &kp LC(LEFT)    &LC(RIGHT)    &none               &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
+                                             &none         &to BASE    &td_num        &sk LSHFT     &to BASE &none
                         >;
                 };
 
@@ -345,7 +360,7 @@ label= "MAC"                               ;
                 &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
                 &none                 &none        &none         &none                &none                  &none      &none          &none     &none     &none
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
-                                             &none         &kp SPACE    &td_num         &td_sym     &nav LSHFT NAV     &none
+                                             &none         &kp SPACE    &td_sym         &td_num     &nav LSHFT NAV     &none
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -356,21 +371,21 @@ label= "MAC"                               ;
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃     <     ┃     >     ┃     *     ┃           ┃   ┃           ┃     {     ┃     }     ┃     |     ┃           ┃
+//             ┃           ┃     --    ┃     ++    ┃     ==    ┃           ┃   ┃           ┃     &&    ┃           ┃    ||     ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     :     ┃     -     ┃     +     ┃     =     ┃     '     ┃   ┃     !     ┃     (     ┃     )     ┃     /     ┃     ;     ┃
+//             ┃     :     ┃     -     ┃     +     ┃     =     ┃     *     ┃   ┃     !     ┃     =>    ┃     $     ┃     |     ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     &     ┃     #     ┃     $     ┃     "     ┃     `     ┃   ┃     _     ┃     [     ┃     ]     ┃     ^     ┃     ?     ┃           ┃
+// ┃           ┃           ┃     <     ┃     >     ┃     &     ┃     #     ┃   ┃     _     ┃     %     ┃     ^     ┃     /     ┃     ?     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃    BASE   ┃   SPACE   ┃   ┃   LSHFT   ┃    NUM    ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &kp LT            &kp GT      &kp STAR    &none           &none       &kp LBRC    &kp RBRC    &kp PIPE    &none       
-                &kp COLON   &kp MINUS         &kp PLUS    &kp EQUAL   &kp SQT         &kp EXCL    &kp LPAR    &kp RPAR    &kp FSLH    &kp SEMI       
-    &none       &kp AMPS    &kp LA(NUMBER_3)  &kp DLLR    &kp DQT     &kp GRAVE       &kp UNDER   &kp LBKT    &kp RBKT    &kp CARET   &kp QMARK   &none
-                                              &none       &kp SPACE   &td_num         &to BASE    &nav LSHFT NAV    &none
+                &none       &DB MINUS       &DB PLUS    &DB EQUAL   &none                 &none       &DB AMPS    &DB PIPE    &none       &none       
+                &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &kp LPAR    &kp DLLR    &kp PIPE    &kp SEMI       
+    &none       &none       &kp LT          &kp GT      &kp AMPS    &kp LA(NUMBER_3)      &kp UNDER   &kp LBKT    &kp RBKT    &kp FSLH    &kp QMARK   &none
+                                            &none       &kp SPACE   &to BASE              &td_num     &nav LSHFT NAV    &none
                         >;
                 };
 
@@ -381,21 +396,21 @@ label= "SYM"                               ;
 label= "NUM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃     0     ┃
+//             ┃           ┃           ┃     £     ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     *     ┃     -     ┃     +     ┃     =     ┃     <     ┃   ┃   LEFT    ┃   DOWN    ┃     UP    ┃   RIGHT   ┃           ┃
+//             ┃     1     ┃     2     ┃     3     ┃     4     ┃     5     ┃   ┃     6     ┃     7     ┃     8     ┃     9     ┃     0     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     ~     ┃     £     ┃     %     ┃     $     ┃     >     ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃           ┃
+// ┃           ┃     ~     ┃           ┃           ┃           ┃           ┃   ┃     @     ┃     \     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    SYM    ┃   SPACE   ┃   ┃   LSHFT   ┃    BASE   ┃           ┃
+//                                     ┃           ┃   SPACE   ┃    SYM    ┃   ┃   LSHFT   ┃    BASE   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp KP_N1              &kp KP_N2             &kp KP_N3         &kp KP_N4          &kp KP_N5             &kp KP_N6   &kp KP_N7     &kp KP_N8     &kp KP_N9    &kp KP_N0
-                &hm_l LALT STAR        &hm_l LCTRL MINUS     &hm_l LSHFT PLUS  &hm_l LGUI EQUAL   &kp LT                &NW LEFT    &NW DOWN      &NW UP        &NW RIGHT    &none       
-    &none       &NW TILDE              &kp LS(NUMBER_3)      &kp PRCNT         &kp DLLR           &kp GT                &NW AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
-                                             &none        &NW SPACE    &to BASE                             &td_sym     &nav LSHFT NAV     &none
+                &none                  &none              &kp LS(NUMBER_3)   &none              &none                 &none           &none              &none             &none              &none
+                &hm_l LALT KP_N1       &hm_l LCTRL KP_N2  &hm_l LSHFT KP_N3  &hm_l LGUI KP_N4   &kp KP_N5             &kp KP_N6       &hm_r RGUI KP_N7   &hm_r RSHFT KP_N8 &hm_r RCTRL KP_N9  &hm_r RALT KP_N0
+    &none       &hm TILDE              &none              &none              &none              &none                 &kp AT      &kp BSLH       &kp COMMA    &kp DOT      &kp FSLH       &none
+                                             &none        &kp SPACE          &td_sym                                  &to BASE     &nav LSHFT NAV     &none
                         >;
                 };
 
