@@ -3,20 +3,20 @@
 //                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
 //                                                        █   █  █  █   █  █  █   █  █  █   █
 //                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               █      ▄▄▄█▄▄▄    █   █
 //                                                               ▀      █  █  █     █▄█
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-       
 
-#include <behaviors.dtsi> 
+
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <behaviors/num_word.dtsi> 
+#include <behaviors/num_word.dtsi>
 
 
 #define BASE 0
@@ -58,8 +58,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            bindings 
-                = <&kp EQUAL> 
+            bindings
+                = <&kp EQUAL>
                 , <&kp GT>
                 ;
           };
@@ -121,90 +121,90 @@
               bindings = <&kp Q>;
               key-positions = <1 2>;
             };
-            
+
             LPar  {
               timeout-ms = <30>;
               bindings = <&kp LPAR>;
               key-positions = <3 13>;
-            };  
+            };
 
             RPar  {
               timeout-ms = <30>;
               bindings = <&kp RPAR>;
               key-positions = <6 16>;
-            };  
+            };
 
             LCurl  {
               timeout-ms = <30>;
               bindings = <&kp LBRC>;
               key-positions = <2 12>;
-            };  
+            };
 
             RCurl  {
               timeout-ms = <30>;
               bindings = <&kp RBRC>;
               key-positions = <7 17>;
-            };  
+            };
 
             LBracket  {
               timeout-ms = <30>;
               bindings = <&kp LBKT>;
               key-positions = <1 11>;
-            };  
+            };
 
             RBracket  {
               timeout-ms = <30>;
               bindings = <&kp RBKT>;
               key-positions = <8 18>;
-            }; 
+            };
 
             LClick {
               timeout-ms = <30>;
               bindings = <&mkp LCLK>;
               key-positions = <13 24>;
-            }; 
+            };
 
             RClick {
               timeout-ms = <30>;
               bindings = <&mkp RCLK>;
               key-positions = <12 23>;
-            }; 
+            };
 
             MClick  {
               timeout-ms = <30>;
               bindings = <&mkp MCLK>;
               key-positions = <11 22>;
-            }; 
+            };
 
             SingleQuote {
               timeout-ms = <30>;
               bindings = <&kp SQT>;
               key-positions = <16 27>;
-            }; 
+            };
 
             DoubleQuote  {
               timeout-ms = <30>;
               bindings = <&kp DQT>;
               key-positions = <17 28>;
-            }; 
+            };
 
             Grave  {
               timeout-ms = <30>;
               bindings = <&kp GRAVE>;
               key-positions = <18 29>;
-            }; 
+            };
 
             MacroLayer  {
               timeout-ms = <30>;
               bindings = <&sl MAC>;
               key-positions = <7 8>;
-            }; 
-            
+            };
+
             CapsWord  {
               timeout-ms = <30>;
               bindings = <&caps_word>;
               key-positions = <28 29>;
-            };  
+            };
 
         };
 
@@ -310,7 +310,7 @@ label= "NAV"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none    &none        &none           &none         &none               &kp HOME      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &none    &none        &none           &none         &none               &kp LC(H)     &kp LC(J)      &kp LC(K)      &kp LC(L)     &none
                 &to NAV  &mkp MCLK    &mkp RCLK       &mkp LCLK     &none               &kp LEFT      &kp DOWN       &kp UP         &kp RIGHT     &none
     &none       &none    &none        &kp LC(LEFT)    &kp LC(RIGHT) &none               &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
                                              &none         &to BASE    &td_num          &sk LSHFT     &to BASE &none
@@ -333,7 +333,7 @@ label= "MAC"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none 
+                &none                 &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP         &none                  &none      &kp PG_DN      &kp PG_UP      &kp END       &none
                 &none                 &none        &none         &none                &none                  &none      &none          &none     &none     &none
     &none       &kp LG(LS(NUMBER_5))  &kp LG(X)    &kp LG(C)     &kp LG(LS(NUMBER_4)) &kp LG(V)                 &kp LG(LBKT)  &kp LG(LBRC)   &kp LG(RBRC)   &kp LG(RBKT)  &none   &none
                                         &trans      &trans      &trans          &trans      &trans         &trans
@@ -358,8 +358,8 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &DB MINUS       &DB PLUS    &DB EQUAL   &none                 &none       &DB AMPS    &DB PIPE    &none       &none       
-                &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &ARROW      &kp DLLR    &kp PIPE    &kp SEMI       
+                &none       &DB MINUS       &DB PLUS    &DB EQUAL   &none                 &none       &DB AMPS    &DB PIPE    &none       &none
+                &kp COLON   &kp MINUS       &kp PLUS    &kp EQUAL   &kp STAR              &kp EXCL    &ARROW      &kp DLLR    &kp PIPE    &kp SEMI
     &none       &none       &kp LT          &kp GT      &kp AMPS    &kp LA(NUMBER_3)      &kp UNDER   &kp PRCNT   &kp CARET   &kp FSLH    &kp QMARK   &none
                                             &none       &kp SPACE   &td_num               &to BASE     &nav LSHFT NAV    &none
                         >;
@@ -411,9 +411,9 @@ label= "ADJ"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none       &bt BT_CLR  &out OUT_BLE    &sys_reset    &trans          &trans          &trans          &trans          &sys_reset      &trans
-                &trans      &bt BT_NXT  &out OUT_TOG    &bt BT_CLR    &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4 
-    &trans      &trans      &bt BT_PRV  &trans          &bootloader   &trans          &trans          &trans          &trans          &trans          &trans     &none         
-                                        &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE      
+                &trans      &bt BT_NXT  &out OUT_TOG    &bt BT_CLR    &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
+    &trans      &trans      &bt BT_PRV  &trans          &bootloader   &trans          &trans          &trans          &trans          &trans          &trans     &none
+                                        &to BASE      &to BASE      &to BASE          &to BASE      &to BASE      &to BASE
                         >;
                 };
 
